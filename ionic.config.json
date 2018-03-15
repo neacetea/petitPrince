@@ -2,5 +2,7 @@
   "name": "prince",
   "app_id": "55b19054",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
