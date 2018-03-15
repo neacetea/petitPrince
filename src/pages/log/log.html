@@ -15,7 +15,7 @@
 
 <ion-content padding>
 <ion-list>
-
+<p *ngIf="error!=''">Le login ou le mot de passe est incorrect<p>
   <ion-item>
     <ion-label stacked>Username</ion-label>
     <ion-input type="text" [(ngModel)]="login"></ion-input>
