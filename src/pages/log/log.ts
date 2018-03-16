@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { HomePage } from '../home/home';
 import 'rxjs/add/operator/map';
@@ -23,7 +23,7 @@ export class LogPage {
 	password = "";
 	error : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public loadingCtrl: LoadingController,private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -53,6 +53,12 @@ export class LogPage {
 	{
 		this.error = this.datas.erreur;
 		loading.dismiss();
+		let toast = this.toastCtrl.create({
+		    message: 'Le login ou le mot de passe est incorrect !',
+		    duration: 3000,
+		    position: 'bottom'
+		 });
+		toast.present();
 	}
   	});
   }
