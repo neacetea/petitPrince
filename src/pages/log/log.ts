@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { HomePage } from '../home/home';
 import 'rxjs/add/operator/map';
@@ -23,7 +23,7 @@ export class LogPage {
 	password = "";
 	error : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -32,6 +32,13 @@ export class LogPage {
 
   checkCredentials()
   {
+  	  let loading = this.loadingCtrl.create({
+  	  	spinner:'crescent',
+    content: 'Connexion...'
+  	});
+
+  	loading.present();
+
 	 this.http.get('http://www.sebastien-thon.fr/cours/M4104Cip/projet/index.php?connexion&login=' + this.login + '&mdp=' + this.password)
 	.map(res => res.json())
 	.subscribe(data => {
@@ -39,11 +46,13 @@ export class LogPage {
 	console.log(this.datas);
 	if(this.datas.resultat == "OK")
 	{
-		  	this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
+		this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
+		loading.dismiss();
 	}
 	else
 	{
 		this.error = this.datas.erreur;
+		loading.dismiss();
 	}
   	});
   }
