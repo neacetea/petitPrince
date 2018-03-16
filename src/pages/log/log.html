@@ -15,19 +15,19 @@
 
 <ion-content padding>
 <ion-list>
-<p *ngIf="error!=null">Le login ou le mot de passe est incorrect<p>
+<p *ngIf="error!=null" ion-text color="danger">Le login ou le mot de passe est incorrect.<p>
   <ion-item>
-    <ion-label stacked>Username</ion-label>
+    <ion-label stacked>Login</ion-label>
     <ion-input type="text" [(ngModel)]="login"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label stacked>Password</ion-label>
+    <ion-label stacked>Mot de passe</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
 
   <div padding>
-		<button ion-button block (click)="checkCredentials()">Sign In</button>
+		<button ion-button block (click)="checkCredentials()">Se connecter</button>
   </div>
 
 </ion-list>
