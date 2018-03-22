@@ -10,7 +10,7 @@ import { HomePage } from '../home/home';
 })
 export class TabsPage {
 
-	data : any = [];
+	data : any;
 
   tab1Root = HomePage;
   tab2Root = AboutPage;
@@ -18,7 +18,10 @@ export class TabsPage {
 
   constructor(public params : NavParams) {
   	console.log(this.params.get('login'));
-  	this.data[0] = this.params.get("login");
-  	this.data[1] = this.params.get("password");
+  	this.data = {
+  			login: this.params.get('login'),
+			password: this.params.get('password')
+  	};
+  	console.log(this.data);
   }
 }
