@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import 'rxjs/add/operator/map';
 
 /**
@@ -11,7 +12,7 @@ import 'rxjs/add/operator/map';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-log',
   templateUrl: 'log.html',
@@ -46,7 +47,7 @@ export class LogPage {
 	console.log(this.datas);
 	if(this.datas.resultat == "OK")
 	{
-		this.navCtrl.setRoot(HomePage, {}, {animate: true, direction: 'forward'});
+		this.navCtrl.setRoot(TabsPage, {login : this.login, password : this.password}, {animate: true, direction: 'forward'});
 		loading.dismiss();
 	}
 	else
@@ -59,6 +60,7 @@ export class LogPage {
 		    position: 'bottom'
 		 });
 		toast.present();
+		return false;
 	}
   	});
   }
