@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { TabsPage } from '../tabs/tabs';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
+import { DatePage } from '../date/date';
 
 import 'rxjs/add/operator/map';
 
