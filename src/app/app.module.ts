@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LogPage } from '../pages/log/log';
 import { DatePage } from '../pages/date/date';
+import { ArticleInfoPage } from '../pages/article-info/article-info';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +22,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     DatePage,
+    ArticleInfoPage,
     LogPage
   ],
   imports: [
@@ -36,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     LogPage,
+    ArticleInfoPage,
     DatePage
   ],
   providers: [
