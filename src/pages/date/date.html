@@ -7,12 +7,18 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>date</ion-title>
+    <ion-title>Dates Importantes</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+	 <ion-list padding>
+      
+		<button ion-item *ngFor="let date of dates" (click)="buttonClick()">
+		 	 <h1>{{date.titre}}</h1>
+		 	 <p>{{date.date | date:'medium':'':'fr_FR'}}</p>
+		</button>
+ </ion-list>
 </ion-content>
