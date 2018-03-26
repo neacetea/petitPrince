@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LogPage } from '../pages/log/log';
 import { DatePage } from '../pages/date/date';
 import { ArticleInfoPage } from '../pages/article-info/article-info';
+import { GalerieInfoPage } from '../pages/galerie-info/galerie-info';
+import { DateInfoPage } from '../pages/date-info/date-info';
 import { Contacts } from '@ionic-native/contacts';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +30,9 @@ registerLocaleData(localeFr, 'fr');
     HomePage,
     TabsPage,
     DatePage,
+    DateInfoPage,
     ArticleInfoPage,
+    GalerieInfoPage,
     LogPage
   ],
   imports: [
@@ -42,10 +46,12 @@ registerLocaleData(localeFr, 'fr');
     MyApp,
     AboutPage,
     ContactPage,
+        DateInfoPage,
     HomePage,
     TabsPage,
     LogPage,
     ArticleInfoPage,
+    GalerieInfoPage,
     DatePage
   ],
   providers: [

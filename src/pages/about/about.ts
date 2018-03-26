@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { ModalController } from 'ionic-angular';
-import { ArticleInfoPage } from '../article-info/article-info';
+import { GalerieInfoPage } from '../galerie-info/galerie-info';
 
 @Component({
   selector: 'page-about',
@@ -14,7 +14,7 @@ export class AboutPage {
   dates : any;
   galeries : any;
 
-  constructor(public navCtrl: NavController, public navParams : NavParams, public http : Http) {
+  constructor(public navCtrl: NavController, public navParams : NavParams, public http : Http,public modalCtrl :ModalController) {
   		console.log(this.navParams.data);
 	this.http.get('http://www.sebastien-thon.fr/cours/M4104Cip/projet/index.php?login=' + this.navParams.data.login + '&mdp=' + this.navParams.data.password)
 	.map(res => res.json())
@@ -24,6 +24,12 @@ export class AboutPage {
 	this.galeries = data.galeries;
 	console.log(this.galeries);
 		});
+	}
+
+	showInformation(data)
+	{
+		let modal = this.modalCtrl.create(GalerieInfoPage,{_data: data});
+    	modal.present();
 	}
 
 }

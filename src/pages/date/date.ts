@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { ModalController } from 'ionic-angular';
-import { ArticleInfoPage } from '../article-info/article-info';
+import { DateInfoPage } from '../date-info/date-info';
 /**
  * Generated class for the DatePage page.
  *
@@ -21,7 +21,7 @@ export class DatePage {
   galeries : any;
   dateValue : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http, public modalCtrl : ModalController) {
   	 		console.log(this.navParams.data);
       	this.http.get('http://www.sebastien-thon.fr/cours/M4104Cip/projet/index.php?login=' + this.navParams.data.login + '&mdp=' + this.navParams.data.password)
       	.map(res => res.json())
@@ -32,6 +32,12 @@ export class DatePage {
       	console.log(this.galeries);
       		});
 	}
+
+  showInformation(data)
+  {
+    let modal = this.modalCtrl.create(DateInfoPage,{_data: data});
+      modal.present();
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DatePage');

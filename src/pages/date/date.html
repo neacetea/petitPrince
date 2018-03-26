@@ -16,7 +16,7 @@
 <ion-content>
 	 <ion-list padding>
       
-		<button ion-item *ngFor="let date of dates" (click)="buttonClick()">
+		<button ion-item *ngFor="let date of dates" (click)="showInformation(date)">
 		 	 <h1>{{date.titre}}</h1>
 		 	 <p>{{date.date | date:'medium':'':'fr_FR'}}</p>
 		</button>
