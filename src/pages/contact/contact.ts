@@ -19,10 +19,14 @@ export class ContactPage {
     contact.name = new ContactName(null, 'Ecole', 'LePetitPrince');
 	  contact.phoneNumbers = [new ContactField('mobile', '0412345678')];
 	  contact.emails = [new ContactField('emails','contact@lepetitprince.fr')];
+<<<<<<< HEAD
 	  contact.save().then(
       () => console.log('Contact saved!', contact),
       (error: any) => console.error('Error saving contact.', error)
     );
+=======
+	  contact.save();
+>>>>>>> 2acc9837e6d54c86a0d09e9aa8222f7808c0a3dc
   }
 
 }

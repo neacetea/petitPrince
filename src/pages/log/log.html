@@ -25,10 +25,14 @@
     <ion-label stacked>Mot de passe</ion-label>
     <ion-input clearInput type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
-
+  <ion-item>
+    <ion-label>Se souvenir de moi</ion-label>
+    <ion-toggle [(ngModel)]="save"></ion-toggle>
+  </ion-item>
   <div padding>
 		<button ion-button block (click)="checkCredentials()">Se connecter</button>
   </div>
+
 
 </ion-list>
 </ion-content>
