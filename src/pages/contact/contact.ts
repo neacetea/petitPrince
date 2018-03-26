@@ -17,8 +17,8 @@ export class ContactPage {
   addContact(){
   let contact : Contact = this.contacts.create(); 
     contact.name = new ContactName(null, 'Ecole', 'LePetitPrince');
-	  //contact.phoneNumbers = [new ContactField('mobile', '0412345678')];
-	  //contact.emails = [new ContactField('emails','contact@lepetitprince.fr')];
+	  contact.phoneNumbers = [new ContactField('mobile', '0412345678')];
+	  contact.emails = [new ContactField('emails','contact@lepetitprince.fr')];
 	  contact.save().then(
       () => console.log('Contact saved!', contact),
       (error: any) => console.error('Error saving contact.', error)
