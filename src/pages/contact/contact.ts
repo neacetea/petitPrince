@@ -6,15 +6,17 @@ import { ModalController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
 import { FavoritePage } from '../favorite/favorite';
-
+import { Events } from 'ionic-angular';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
 export class ContactPage {
 	
-  constructor(public navCtrl: NavController, public contacts: Contacts,public modalCtrl : ModalController,public toastCtrl : ToastController, public storage:Storage,public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+  theme:any;
 
+  constructor(public navCtrl: NavController, public contacts: Contacts,public modalCtrl : ModalController,public toastCtrl : ToastController,public events : Events, public storage:Storage,public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+      this.storage.get("theme").then((value) => {this.theme = value});
   }
 
   AfficherTuto()
@@ -48,6 +50,14 @@ export class ContactPage {
     let modal = this.modalCtrl.create(FavoritePage);
       modal.present();
   }
+
+  updateTheme()
+  {
+    console.log("sent");
+    this.events.publish('functionCall:updateTheme', this.theme);
+    this.storage.set("theme",this.theme);
+  }
+
   ViderFavoris()
   {
     let alert = this.alertCtrl.create({
@@ -72,7 +82,7 @@ export class ContactPage {
           loading.present();
 
           this.storage.forEach( (value, key, index) => {
-          if(key != "credentials" && key != "new")
+          if(key != "credentials" && key != "new" && key != "theme")
               this.storage.remove(key);
           });
           loading.dismiss();

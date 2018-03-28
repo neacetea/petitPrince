@@ -48,8 +48,8 @@ export class FavoritePage {
       modal.onDidDismiss(() => {
         this.data = [];
          this.storage.forEach( (value, key, index) => {
-          if(key != "credentials" && key != "new")
-          this.data.push(value);
+          if(key != "credentials" && key != "new" && key != "theme")
+            this.data.push(value);
           });
       });
   }

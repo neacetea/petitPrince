@@ -43,6 +43,13 @@
       <p>-- Malvolti Gregory --</p>
     </ion-item>
     <ion-item>
+      <ion-label class="selection" style="color:black;">Choisissez un thème</ion-label>
+      <ion-select  (ionChange)="updateTheme()" [(ngModel)]="theme">
+        <ion-option value="defaut" selected>Defaut Theme</ion-option>
+        <ion-option value="dark">Dark theme</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
       <button align="center" ion-button block (click)="AfficherTuto()">Afficher le tutoriel</button>
     </ion-item>
     <ion-item>

@@ -1,0 +1,80 @@
+.dark{
+
+  ion-content {
+    background-color:grey;
+  }
+
+  ion-header .toolbar-background-md
+  {
+  	 background-color:grey;
+
+  }
+  .toolbar-title-md
+  {
+  	  color: white;
+  }
+
+  page-contact ion-item
+  {
+  	background-color: darkgrey;
+  }
+
+  ion-list
+  {
+  	background-color: darkgrey;
+  	box-shadow: 4px 4px 5px black;
+  }
+  page-log ion-item
+  {
+  	background-color: darkgrey;
+  }
+  ion-label
+  {
+  	color : #e7e7e7;
+  	text-shadow: 1px 1px black;
+  }
+  .item-label-stacked
+  {
+  	color:black;
+  }
+  .toggle-md.toggle-checked .toggle-icon
+  {
+  	background-color: black;
+  }
+  .toggle-md.toggle-checked .toggle-inner
+  {
+  	background-color: darkred;
+  }
+
+  ion-header button
+  {
+  	background-color: red;
+  }
+
+  .button-md:hover:not(.disable-hover)
+  {
+  	background-color: red;
+  }
+
+  .button-md:not(.disable-hover)
+  {
+  	background-color: darkred;
+  }
+
+  ion-content button
+  {
+  	background-color: grey;
+  	box-shadow: 4px 4px 5px darkgrey;
+
+  }
+
+  ion-content ion-select{
+  		color: white;
+  }
+
+  ion-content ion-item button
+  {
+  	color: white;
+  	background-color: rgba(0, 0, 255, 0);
+  }
+}
