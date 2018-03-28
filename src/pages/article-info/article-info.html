@@ -5,28 +5,30 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar class ="toolbar toolbar-ios">
-  	
     <ion-title class ="title title-ios"><div class="toolbar-title toolbar-title-ios">Information</div></ion-title>
     <button ion-button (click)="closeModal()">Retour</button>
-  
-
-
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-		<ion-list>
-	<ion-item  style="white-space: normal;">
-	<h1 text-wrap>{{data.titre}}</h1>
-</ion-item>
-
+	<ion-list>
+		<ion-item  style="white-space: normal;">
+			<h1 align="center" text-wrap>{{data.titre}}</h1>
+		</ion-item>
+		<ion-item>
+			<ion-slides>
+			  	<ion-slide *ngFor="let images of data.photos">
+			    	<img [src]="'http://www.sebastien-thon.fr/cours/M4104Cip/projet/images/' + images.image"/>
+			    	<p>{{images.legende}}</p>
+			  	</ion-slide>
+			</ion-slides>
+		</ion-item>
+			<p  align="center">{{data.texte}}</p>
 		<ion-item>
 			<ion-label>Ajouter aux favoris :</ion-label>
-		    <ion-toggle [(ngModel)]="favorite" (ionChange)="setFav($event)"></ion-toggle>
+		    <ion-toggle [(ngModel)]="favorite" (ionChange)="setFav($event,data)"></ion-toggle>
 		</ion-item>
 	</ion-list>
 </ion-content>

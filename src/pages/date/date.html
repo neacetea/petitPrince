@@ -6,14 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Dates Importantes</ion-title>
+ <ion-navbar>  
+    <ion-title>Dates importantes</ion-title>
+    <button ion-button float-right (click)="OpenFavorite()">Favoris</button>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
+  
 	 <ion-list padding>
       
 		<button ion-item *ngFor="let date of dates" (click)="showInformation(date)">

@@ -1,30 +1,52 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+  <ion-navbar>  
+    <ion-title>Support</ion-title>
+    <button ion-button float-right (click)="OpenFavorite()">Favoris</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>    
+  <ion-list class="contact">    
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <i><u><h1 align="center">Contacter l'école</h1></u></i>
     </ion-item>
-    <ion-item>
-      École le Petit Prince
+    <ion-item align="center" >
+      <p align="center" >École le Petit Prince
       1, rue des écoles
-      13000 Saint Exupéry
+      13000 Saint Exupéry</p>
     </ion-item>
     <ion-item>
-      Tél: 0412345678
+      <p align="center" >Tél: 0412345678</p>
     </ion-item>
     <ion-item>
-      Mail:contact@lepetitprince.fr
+        <p> Mail:contact@lepetitprince.fr</p>  
     </ion-item>
     <ion-item>
-      <button ion-button (click)="addContact()">Ajouter à mes contacts</button>
+      <button align="center" ion-button block (click)="addContact()">Ajouter à mes contacts</button>
+    </ion-item>
+  </ion-list>
+  
+  <div class="line-separator"></div>
+  <div class="line-separator"></div>
+  <div class="line-separator"></div>
+
+  <ion-list class="options">    
+    <ion-item>
+      <i><u><h1 align="center">Options</h1></u></i>
+    </ion-item>
+    <ion-item align="center" >
+      <p>Version : <b>v0.0.1</b></p>
+      <p>Using Ionic/Angular Cordova</p>
+      <p>IUT Arles - Aix-Marseille</p>
+      <br/>
+      <p>-- Poirier Quentin --</p>
+      <p>-- Malvolti Gregory --</p>
+    </ion-item>
+    <ion-item>
+      <button align="center" ion-button block (click)="AfficherTuto()">Afficher le tutoriel</button>
+    </ion-item>
+    <ion-item>
+      <button align="center" ion-button block (click)="ViderFavoris()">Vider les favoris</button>
     </ion-item>
   </ion-list>
 </ion-content>

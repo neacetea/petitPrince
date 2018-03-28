@@ -1,0 +1,26 @@
+<!--
+  Generated template for the FavoritePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar class ="toolbar toolbar-ios">	
+    <ion-title class ="title title-ios"><div class="toolbar-title toolbar-title-ios">Favoris</div></ion-title>
+    <button ion-button (click)="closeModal()">Retour</button>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+	<ion-list padding>
+			<h1 align="center">Liste des articles en favoris</h1>
+			  <div class="line-separator"></div>
+			  <div class="line-separator"></div>
+			  <div class="line-separator"></div>
+      <button ion-item *ngFor="let article of data" (click)="showInformation(article)" class="item-ios" ion-item item-ios >
+      <h2>{{article.titre}}</h2>
+      <p>{{article.date | date:'medium':'':'fr_FR'}}</p>
+      </button>
+ </ion-list>
+</ion-content>

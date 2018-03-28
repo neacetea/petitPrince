@@ -12,12 +12,16 @@ import { LogPage } from '../pages/log/log';
 import { DatePage } from '../pages/date/date';
 import { ArticleInfoPage } from '../pages/article-info/article-info';
 import { GalerieInfoPage } from '../pages/galerie-info/galerie-info';
+import { TutorialPage } from '../pages/tutorial/tutorial';
 import { DateInfoPage } from '../pages/date-info/date-info';
+import { Calendar } from '@ionic-native/calendar';
+import { FavoritePage } from '../pages/favorite/favorite';
 import { Contacts } from '@ionic-native/contacts';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 import { registerLocaleData } from '@angular/common';
+import { Network } from '@ionic-native/network';
 import localeFr from '@angular/common/locales/fr';
 
 registerLocaleData(localeFr, 'fr');
@@ -31,7 +35,9 @@ registerLocaleData(localeFr, 'fr');
     TabsPage,
     DatePage,
     DateInfoPage,
+    TutorialPage,
     ArticleInfoPage,
+    FavoritePage,
     GalerieInfoPage,
     LogPage
   ],
@@ -47,16 +53,20 @@ registerLocaleData(localeFr, 'fr');
     AboutPage,
     ContactPage,
         DateInfoPage,
+        FavoritePage,
     HomePage,
     TabsPage,
     LogPage,
+    TutorialPage,
     ArticleInfoPage,
     GalerieInfoPage,
     DatePage
   ],
   providers: [
     StatusBar,
+    Network,
     SplashScreen,
+    Calendar,
     Contacts,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

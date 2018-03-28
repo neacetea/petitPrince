@@ -20,13 +20,11 @@
 
 <ion-content padding>
 		<ion-list>
-	<ion-item  style="white-space: normal;">
-	<h1 text-wrap>{{data.titre}}</h1>
+	<ion-item style="white-space: normal;">
+	<h1 align="center" text-wrap>{{data.titre}}</h1>
 </ion-item>
-
-		<ion-item>
-			<ion-label>Ajouter aux favoris :</ion-label>
-		    <ion-toggle [(ngModel)]="favorite" (ionChange)="setFav($event)"></ion-toggle>
-		</ion-item>
+	<p  align="center">{{data.texte}}</p>
+	<p  align="center">{{data.date | date:'medium':'':'fr_FR'}}</p>
+	<button align="center" ion-button block (click)="addToCalendar()">Ajouter au calendrier</button>
 	</ion-list>
 </ion-content>

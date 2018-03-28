@@ -1,14 +1,20 @@
 <ion-header>
-  <ion-navbar>
+ <ion-navbar>	
     <ion-title>Articles</ion-title>
+    <button ion-button float-right (click)="OpenFavorite()">Favoris</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
- <ion-list padding>
-      <button ion-item *ngFor="let article of articles" (click)="showInformation(article)" class="item-ios" ion-item item-ios >
+	<ion-refresher (ionRefresh)="rafraichirListe($event)">
+		<ion-refresher-content>
+		</ion-refresher-content>
+	</ion-refresher>
+	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list padding>
+      <button ion-item *ngFor="let article of filtered" (click)="showInformation(article)" class="item-ios" ion-item item-ios >
       <h2>{{article.titre}}</h2>
-      <p>{{article.date}}</p>
+      <p>{{article.date | date:'medium':'':'fr_FR'}}</p>
       </button>
  </ion-list>
 </ion-content>
